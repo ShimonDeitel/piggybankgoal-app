@@ -1,0 +1,29 @@
+{
+  "identifier": "piggybankgoal",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "piggybankgoal_pro",
+      "localizations": [
+        {
+          "description": "Unlocks unlimited concurrent goals and milestone celebrations.",
+          "displayName": "Piggybank - Savings Goal Pro",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "piggybankgoal_pro",
+      "referenceName": "Piggybank - Savings Goal Pro",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_askToBuyEnabled": false
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

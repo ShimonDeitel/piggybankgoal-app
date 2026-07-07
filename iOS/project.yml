@@ -1,0 +1,75 @@
+name: Piggybank - Savings Goal
+options:
+  bundleIdPrefix: com.shimondeitel.piggybankgoal
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Piggybank-SavingsGoal:
+    type: application
+    platform: iOS
+    sources:
+      - path: Piggybank-SavingsGoal
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.piggybankgoal
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Piggybank-SavingsGoal/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  Piggybank-SavingsGoalTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Piggybank-SavingsGoalTests
+      - path: Piggybank-SavingsGoal.storekit
+    dependencies:
+      - target: Piggybank-SavingsGoal
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.piggybankgoal.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  Piggybank-SavingsGoalUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Piggybank-SavingsGoalUITests
+    dependencies:
+      - target: Piggybank-SavingsGoal
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.piggybankgoal.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Piggybank-SavingsGoal:
+    build:
+      targets:
+        Piggybank-SavingsGoal: all
+        Piggybank-SavingsGoalTests: [test]
+        Piggybank-SavingsGoalUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Piggybank-SavingsGoal.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Piggybank-SavingsGoal.storekit
+      targets:
+        - Piggybank-SavingsGoalTests
+        - Piggybank-SavingsGoalUITests
+    archive:
+      config: Release
